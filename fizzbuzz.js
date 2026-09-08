@@ -10,11 +10,12 @@ function fizzbuzz() {
         } else if (_isDivisibleByFive(number)) {
             console.log("Buzz");
         } else {
-            console.log(number)
+            console.log(number);
         }
-        number++
+        number++;
     }
 }
+
 
 function _isDivisibleByThree(number) {
     return number % 3 == 0 ? true : false;
