@@ -5,23 +5,22 @@ function fizzbuzz() {
     let number = 0;
     let output = '';
     while (number <= MAX_NUMBER){
-        if (!_isDivisibleByThree(number) && !_isDivisibleByFive(number) && !_isDivisibleBySeven(number)) {
+        output = '';
+        if (_isDivisibleByThree(number)) {
+            output += "Fizz";
+        }
+        if (_isDivisibleByFive(number)) {
+            output += "Buzz";
+        }
+        if (_isDivisibleBySeven(number)) {
+            output += "Bang";
+        }
+        if (output == '') {
             output += String(number);
-        } else {
-            if (_isDivisibleByThree(number)) {
-                output += "Fizz";
-            }
-            if (_isDivisibleByFive(number)) {
-                output += "Buzz";
-            }
-            if (_isDivisibleBySeven(number)) {
-                output += "Bang";
-            }
         }
         number++;
-        output += '\n';
+        console.log(output);
     }
-    console.log(output);
 }
 
 
