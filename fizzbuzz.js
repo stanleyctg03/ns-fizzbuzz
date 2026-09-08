@@ -1,21 +1,33 @@
 // This is our main function
 function fizzbuzz() {
     // Put your code here...
+    const MAX_NUMBER = 100
     let number = 0;
-    while (number <= 100){
-        if (_isDivisibleByThree(number) && _isDivisibleByFive(number)) {
-            console.log("FizzBuzz");
-        } else if (_isDivisibleByThree(number)) {
-            console.log("Fizz");
-        } else if (_isDivisibleByFive(number)) {
-            console.log("Buzz");
+    let output = '';
+    while (number <= MAX_NUMBER){
+        if (!_isDivisibleByThree(number) && !_isDivisibleByFive(number) && !_isDivisibleBySeven(number)) {
+            output += String(number);
         } else {
-            console.log(number);
+            if (_isDivisibleByThree(number)) {
+                output += "Fizz";
+            }
+            if (_isDivisibleByFive(number)) {
+                output += "Buzz";
+            }
+            if (_isDivisibleBySeven(number)) {
+                output += "Bang";
+            }
         }
         number++;
+        output += '\n';
     }
+    console.log(output);
 }
 
+
+function _isDivisibleBySeven(number) {
+    return number % 7 == 0 ? true : false;
+}
 
 function _isDivisibleByThree(number) {
     return number % 3 == 0 ? true : false;
