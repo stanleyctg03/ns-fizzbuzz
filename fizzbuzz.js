@@ -1,7 +1,7 @@
 // This is our main function
 function fizzbuzz() {
     // Put your code here...
-    const MAX_NUMBER = 200;
+    const MAX_NUMBER = 255;
     let number = 0;
     let output = '';
     while (number <= MAX_NUMBER){
@@ -28,6 +28,12 @@ function fizzbuzz() {
                 output = "Fezz";
             }
         }
+        if (_isDivisibleBySeventeen) {
+            if (output.length > 1) {
+                const words = output.split(/(?=[A-Z])/);
+                output = words.reverse().join('');
+            }
+        }
         if (output == '') {
             output += String(number);
         }
@@ -36,6 +42,10 @@ function fizzbuzz() {
     }
 }
 
+
+function _isDivisibleBySeventeen(number) {
+    return number % 17 == 0 ? true : false;
+}
 
 function _isDivisibleByThirteen(number) {
     return number % 13 == 0 ? true : false;
