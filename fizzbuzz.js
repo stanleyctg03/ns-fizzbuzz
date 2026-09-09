@@ -15,6 +15,9 @@ function fizzbuzz() {
         if (_isDivisibleBySeven(number)) {
             output += "Bang";
         }
+        if (_isDivisibleByEleven(number)) {
+            output = "Bong";
+        }
         if (output == '') {
             output += String(number);
         }
@@ -23,6 +26,10 @@ function fizzbuzz() {
     }
 }
 
+
+function _isDivisibleByEleven(number) {
+    return number % 11 == 0 ? true : false;
+}
 
 function _isDivisibleBySeven(number) {
     return number % 7 == 0 ? true : false;
